@@ -1,16 +1,5 @@
 'use strict'
 
-/* let num = 266219;
-let str = num.toString();
-let res = 1;
-for (const i of str) {
-   res *= i
-}
-
-let numPow = (res ** 3).toString();
-
-console.log(+numPow.slice(0, 2)); */
-
 let russianDays = ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье'];
 let englishDays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
@@ -36,12 +25,12 @@ switch (lang) {
       break;
 }
 
-let assocArr = {
-   'ru' : russianDays,
-   'en' : englishDays
-}
+let assocArr = [];
+assocArr['ru'] = russianDays;
+assocArr['en'] = englishDays;
 
 console.log(assocArr[lang]);
+console.log(assocArr);
 
 let namePerson = prompt('Введите имя:', 'Артем');
 (namePerson === 'Артем') ? console.log('директор'):
