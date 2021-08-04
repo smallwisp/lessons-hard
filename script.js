@@ -1,50 +1,28 @@
 'use strict'
 
-/* let num = 266219;
-let str = num.toString();
-let res = 1;
-for (const i of str) {
-   res *= i
+function getString(str) {
+   let pos = 0;
+   let subStr = str;
+   if (typeof str != "string") {
+      console.log('Вы ввели не строку!');
+   } else {
+      while (subStr.startsWith(' ')) {
+         subStr = str.slice(pos);    
+         pos++;
+      }
+      while (subStr.endsWith(' ')) {
+         subStr = subStr.slice(0, str.length - pos);    
+         pos++;
+      }
+      if (subStr.length > 30) {
+         subStr = subStr.slice(0, subStr.length - 1) + '...'
+      }
+
+   }
+   return subStr;
 }
 
-let numPow = (res ** 3).toString();
-
-console.log(+numPow.slice(0, 2)); */
-
-let russianDays = ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье'];
-let englishDays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-
-let lang = prompt('Введите используемый язык:', 'ru');
-
-if (lang === 'ru') {
-   console.log(russianDays);
-} else if (lang === 'en') {
-   console.log(englishDays);
-} else {
-   console.log('your language is not supported!');
-}
-
-switch (lang) {
-   case 'ru':
-   console.log(russianDays);
-      break;
-   case 'en':
-   console.log(englishDays);
-      break;
-   default:
-   console.log('your language is not supported!');
-      break;
-}
-
-let assocArr = {
-   'ru' : russianDays,
-   'en' : englishDays
-}
-
-console.log(assocArr[lang]);
-
-let namePerson = prompt('Введите имя:', 'Артем');
-(namePerson === 'Артем') ? console.log('директор'):
-(namePerson === 'Максим') ? console.log('преподаватель') : console.log('студент');
+console.log(getString('       12  346748499595858fnfnfnfgjfkfkekfmdngndgj   '));
+console.log(getString(234));
 
 
