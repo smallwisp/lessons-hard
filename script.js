@@ -1,39 +1,19 @@
 'use strict'
 
-let russianDays = ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье'];
-let englishDays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+let arr = ['5648093', '1200329', '0989654', '2102789', '4471936', '9999554', '2779311'];
 
-let lang = prompt('Введите используемый язык:', 'ru');
 
-if (lang === 'ru') {
-   console.log(russianDays);
-} else if (lang === 'en') {
-   console.log(englishDays);
-} else {
-   console.log('your language is not supported!');
+for (const i of arr) {
+   if (i.startsWith('2') || i.startsWith('4')) {
+      console.log(i);
+   } 
 }
 
-switch (lang) {
-   case 'ru':
-   console.log(russianDays);
-      break;
-   case 'en':
-   console.log(englishDays);
-      break;
-   default:
-   console.log('your language is not supported!');
-      break;
+nextIteration:
+for (let i = 2; i < 100; i++) {
+   for (let j = 2; j < i; j++) {
+      if (i % j == 0) continue nextIteration;
+      
+   }
+   console.log(`${i} Делители этого числа: 1 и ${i}`);
 }
-
-let assocArr = [];
-assocArr['ru'] = russianDays;
-assocArr['en'] = englishDays;
-
-console.log(assocArr[lang]);
-console.log(assocArr);
-
-let namePerson = prompt('Введите имя:', 'Артем');
-(namePerson === 'Артем') ? console.log('директор'):
-(namePerson === 'Максим') ? console.log('преподаватель') : console.log('студент');
-
-
